@@ -25,20 +25,26 @@
 (defpackage :miguedrez
   (:use :cl :cl-user)
   (:export :ajz))
+
 (in-package :miguedrez)
 
 (defvar *calls* 0)
 
-(defconstant +knight-bishop-pos-weigh+
+ (defmacro define-constant (name value &optional doc)
+   `(defconstant ,name (if (boundp ',name) (symbol-value ',name) ,value)
+                       ,@(when doc (list doc))))
+
+
+(define-constant +knight-bishop-pos-weigh+
   (make-array 8 :initial-contents '(10 10 30 60 60 30 10 10)))
 
-(defconstant +rook-pos-weigh+
+(define-constant +rook-pos-weigh+
   (make-array 8 :initial-contents '(60 30 30 10 10 30 30 60)))
 
-(defconstant +pawn-pos-v-weigh+
+(define-constant +pawn-pos-v-weigh+
   (make-array 8 :initial-contents '(0 0 5 10 30 100 250 900)))
 
-(defconstant +pawn-pos-h-weigh+
+(define-constant +pawn-pos-h-weigh+
   (make-array 8 :initial-contents '(2 5 10 20 20 10 5 2)))
 
 (defun ajz ()
