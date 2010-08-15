@@ -1,0 +1,14 @@
+
+Developed with SLIME.
+
+Fire up your Lisp interpreter (I use SBCL) and load the main file:
+(load "miguedrez.lisp")
+
+Now you can start the game:
+(miguedrez:ajz)
+
+Enjoy!
+
+Suggestions (complains and things like that :-) to:
+manuf_81  at  y a h o o . c o m
+
