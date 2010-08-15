@@ -23,7 +23,8 @@
 ;;     along with Miguedrez.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Hash table containing the descriptions of the pieces
-(setf *pieces* (make-hash-table))
+(in-package :miguedrez)
+(defvar *pieces* (make-hash-table))
 (setf (gethash 'TN *pieces*) "TN")
 (setf (gethash 'TB *pieces*) "TB")
 (setf (gethash 'CN *pieces*) "CN")

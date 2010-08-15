@@ -23,6 +23,7 @@
 ;;     along with Miguedrez.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Main data type
+(in-package :miguedrez)
 (defstruct board
   (board)
   (whites)

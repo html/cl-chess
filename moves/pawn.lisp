@@ -23,6 +23,7 @@
 ;;     along with Miguedrez.  If not, see <http://www.gnu.org/licenses/>.
 
 
+(in-package :miguedrez)
 
 ;;; Places to which a pawn can move whitout atacking
 (defun free-pos-pawn (board pos)

@@ -23,6 +23,7 @@
 ;;     along with Miguedrez.  If not, see <http://www.gnu.org/licenses/>.
 
 				  
+(in-package :miguedrez)
 
 (defun maybe-pos-king (pos)
   (let ((row (pos-row pos))

@@ -23,15 +23,7 @@
 ;;     along with Miguedrez.  If not, see <http://www.gnu.org/licenses/>.
 
 
-
-(load "moves/pawn.lisp")
-(load "moves/knight.lisp")
-(load "moves/rook.lisp")
-(load "moves/bishop.lisp")
-(load "moves/queen.lisp")
-(load "moves/king.lisp")
-
-
+(in-package :miguedrez)
 
 ;;; This function executes a move on a board
 ;;; It DOES NOT CHECK that the dest pos is void, that is job for

@@ -23,6 +23,7 @@
 ;;     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
 
+(in-package :miguedrez)
 
 
 (defun possible-white-rook (board pos)

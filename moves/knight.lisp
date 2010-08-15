@@ -23,6 +23,8 @@
 ;;     along with Miguedrez.  If not, see <http://www.gnu.org/licenses/>.
 
 
+(in-package :miguedrez)
+
 ;;; Places threatened by a knight
 (defun pos-knight (board pos)
   (let ((positions '()))

@@ -23,6 +23,7 @@
 ;;     along with Miguedrez.  If not, see <http://www.gnu.org/licenses/>.
 
 
+(in-package :miguedrez)
 
 (defun possible-queen (board pos)
   (let* ((rook-functions '((white possible-white-rook)
