@@ -24,7 +24,7 @@
 
 (defpackage :miguedrez
   (:use :cl :cl-user)
-  (:export :ajz :make-move :make-pos :*pieces* :make-player))
+  (:export :ajz :make-move :make-pos :*pieces* :make-player :create-initial-board-white-bottom :board-board))
 
 (in-package :miguedrez)
 
