@@ -24,7 +24,7 @@
 
 (defpackage :miguedrez
   (:use :cl :cl-user)
-  (:export :ajz))
+  (:export :ajz :make-move :make-pos))
 
 (in-package :miguedrez)
 
@@ -51,11 +51,11 @@
 
   ;; initialize
   (let* ((player1 (make-player :type 'manual :color 'white))
-	 (player2 (make-player :type 'auto :color 'black))
-;;	 (table (create-initial-board-tests))
-	 (table (create-initial-board-white-bottom))
-	 (current-player)
-	 (current-move))
+     (player2 (make-player :type 'auto :color 'black))
+;;   (table (create-initial-board-tests))
+     (table (create-initial-board-white-bottom))
+     (current-player)
+     (current-move))
 
     (setf current-player player1)
 
@@ -65,32 +65,32 @@
        (setf *calls* 0)
        ;; checkmate?
        (if (checkmatep table current-player)
-	   ;; Yes -> end
-	   (progn
-	     (format t "Pierde el color ~A.~%"
-		     (player-color current-player))
-	     (return))
-	   ;; No -> load move
-	   (setf current-move (load-move table current-player)))
+       ;; Yes -> end
+       (progn
+         (format t "Pierde el color ~A.~%"
+             (player-color current-player))
+         (return))
+       ;; No -> load move
+       (setf current-move (load-move table current-player)))
        
        ;; check move - including castlings
        (if (valid table current-move (player-color current-player))
 
-	   ;; valid -> do movement
-	   (progn
-	     (execute-move table current-move)
-	     (if (eq current-player player1)
-		 (setf current-player player2)
-		 (setf current-player player1)))
+       ;; valid -> do movement
+       (progn
+         (execute-move table current-move)
+         (if (eq current-player player1)
+         (setf current-player player2)
+         (setf current-player player1)))
 
-	   ;; invalid -> automatic?
-	   (if (eq (player-type current-player) 'auto)
-	       ;; yes -> error
-	       (progn
-		 (print "Esto es una mierda...")
-		 (return))
-	       ;; not -> ask again
-	       (print "Movimiento de mierda. Otro, anda..."))))))
+       ;; invalid -> automatic?
+       (if (eq (player-type current-player) 'auto)
+           ;; yes -> error
+           (progn
+         (print "Esto es una mierda...")
+         (return))
+           ;; not -> ask again
+           (print "Movimiento de mierda. Otro, anda..."))))))
 
 
 (defun load-move (table player)
