@@ -24,16 +24,15 @@
 
 (defpackage :miguedrez
   (:use :cl :cl-user)
-  (:export :ajz :make-move :make-pos '*pieces*))
+  (:export :ajz :make-move :make-pos "*pieces*"))
 
 (in-package :miguedrez)
 
 (defvar *calls* 0)
 
- (defmacro define-constant (name value &optional doc)
-   `(defconstant ,name (if (boundp ',name) (symbol-value ',name) ,value)
-                       ,@(when doc (list doc))))
-
+(defmacro define-constant (name value &optional doc)
+  `(defconstant ,name (if (boundp ',name) (symbol-value ',name) ,value)
+                      ,@(when doc (list doc))))
 
 (define-constant +knight-bishop-pos-weigh+
   (make-array 8 :initial-contents '(10 10 30 60 60 30 10 10)))
@@ -91,7 +90,6 @@
          (return))
            ;; not -> ask again
            (print "Movimiento de mierda. Otro, anda..."))))))
-
 
 (defun load-move (table player)
   (if (eq (player-type player) 'manual)
